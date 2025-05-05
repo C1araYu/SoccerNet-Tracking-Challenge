@@ -5,7 +5,8 @@ from pathlib import Path
 from tracklab.utils.cv2 import draw_text
 from tracklab.visualization import ImageVisualizer
 
-from sn_calibration_baseline.soccerpitch import SoccerPitch
+from .soccerpitch import SoccerPitch
+
 
 import logging
 

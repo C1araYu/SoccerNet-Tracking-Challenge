@@ -41,9 +41,9 @@ pipeline:
 experiment_name: "sn-gamestate"
 
 # Path definitions
-home_dir: "${oc.env:HOME}"
-data_dir: "${project_dir}/data"
-model_dir: "${project_dir}/pretrained_models"
+home_dir: "/home/kuaiyu/sn-gamestate"
+data_dir: "/home/kuaiyu/sn-gamestate/data"
+model_dir: "/home/kuaiyu/sn-gamestate/pretrained_models"
 
 # Machine configuration
 num_cores: 4
@@ -69,7 +69,7 @@ dataset:
   nvid: 1  # For a quick first inference, only the first video is processed. Use "-1" to process all the videos.
 #  nframes: -1 # For testing on only a few frames, set to a positive number. Will disable evaluation !
   eval_set: "valid"  # Tracking is performed on the SoccerNet validation set. Choose from {"train", "valid", "test", "challenge"}.
-  dataset_path: ${data_dir}/SoccerNetGS  # The SoccerNet game state dataset is located under the data path (defined above) in the 'SoccerNetGS' folder
+  dataset_path: "/home/kuaiyu/sn-gamestate/data/SoccerNetGS"  # The SoccerNet game state dataset is located under the data path (defined above) in the 'SoccerNetGS' folder
   vids_dict: # Use one key per split (valid, test, etc)
     valid: []  # Specify explicitly which video to apply tracking on, e.g. ['SNGS-04', 'SNGS-51'] . Ignored when left empty.
 
