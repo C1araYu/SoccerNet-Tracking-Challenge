@@ -58,6 +58,10 @@ modules: # Allows module-specific batch_size and other configuration
   pitch: {batch_size: 1}
   calibration: {batch_size: 1}
   jersey_number_detect: {batch_size: 8}
+  write_states: true
+  write_results: true
+  states_folder: states
+  results_folder: result
 
 # Flags
 test_tracking: True
