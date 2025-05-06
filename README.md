@@ -30,7 +30,7 @@ To evaluate:
 ```
 
 ### Running GSR_Implementation
-
+Just refer to 
 ## Directory Structure, Key Files
 This repo contains the two implementations: our modified ByteTrack baseline, and our improved GSR-inspired method.  Also in the home directory is the dataset sample.
 
