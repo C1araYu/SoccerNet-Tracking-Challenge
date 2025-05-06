@@ -38,6 +38,38 @@ This repo contains the two implementations: our modified ByteTrack baseline, and
 Key files of the ByteTrack_Implementation are the ByteTrack_Implementation/SN_TRACKING_HOME/Benchmarks/ByteTrack, which is where the commands to run the above code are done. The dataset should be stored in ByteTrack_Implementation as tracking-2023, and filenames may need to be changed to match that.   
 Other useful files are MOTVisualize.py in ByteTrack_Implemenation, if you change the filepaths at the bottom, you can turn your detections and tracklet IDs into annotated video output.  
 
+### GSR_Implementation
+#### Key File Descriptions
+
+- **`configs/soccernet_modified.yaml`**  
+  Contains the complete Hydra configuration used to run the improved GSR pipeline. It enables transformer-based association, learned ReID, and filtering heuristics.
+
+- **`src/data/soccernet_dataset.py`**  
+  Responsible for loading SoccerNet player annotations and preparing video frame inputs. Ensures compatibility with our modified detection and tracking models.
+
+- **`src/model/transformer_assoc.py`**  
+  Implements a lightweight transformer that performs temporal association between detected player instances across frames, reducing ID switches caused by occlusion or camera movement.
+
+- **`src/model/mlp_reid.py`**  
+  Defines a small MLP architecture to refine appearance embeddings extracted from detections, used in pairwise player ReID.
+
+- **`src/utils/pitch_filter.py`**  
+  Applies geometric constraints to exclude bounding boxes detected outside the soccer pitch (e.g., crowd or sideline), improving tracking focus and accuracy.
+
+- **`src/utils/eval_metrics.py`**  
+  Includes standard evaluation metrics such as HOTA, MOTA, MOTP, and IDF1, providing consistent comparisons across methods.
+
+- **`src/run_gsr.py`**  
+  Main entry point that ties the entire pipeline together: detection → ReID embedding → transformer-based association → pitch filtering → evaluation and result saving.
+
+- **`pretrained_models/`**  
+  Contains pretrained weights for the transformer association module and MLP ReID head. These are loaded during inference to reproduce reported results.
+
+### How to Run
+
+See this folder's `README.md` for step-by-step instructions on how to configure, run, and evaluate the tracking pipeline.
+
+
 ## Dependencies, Setup
 ### ByteTrack ImplementationSetup
 This implementation utilizes the (sn-tracking)[https://github.com/SoccerNet/sn-tracking.git] module, the (ByteTrack)[https://github.com/ifzhang/ByteTrack.git] module, and the (YOLOX)[https://github.com/Megvii-BaseDetection/YOLOX.git] modules.  However, due to some import and setup errors, these modules are cloned and modified locally for the moment to fix these issues.  Thus, there is no need to install them individually, but their requirements are still needed.
