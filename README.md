@@ -6,6 +6,7 @@ This project includes two different implementations of the task: a modified Socc
 The SoccerNet Tracking Challenge involves detecting bounding boxes for objects from live broadcast footage of soccer games, as well as assigning consistent tracklet IDs for objects moving in and out of frame.
 
 ## How to run code
+### Running ByteTrack_Implementation
 TO set up:
 ```
     cd <SN_TRACKING_HOME>/Benchmarks/ByteTrack
@@ -28,21 +29,6 @@ To evaluate:
     bash run_bytetrack_gt_batch.sh
 ```
 
-
-### ByteTrack Implementation:
-This implementation utilizes the (sn-tracking)[https://github.com/SoccerNet/sn-tracking.git] module, the (ByteTrack)[https://github.com/ifzhang/ByteTrack.git] module, and the (YOLOX)[https://github.com/Megvii-BaseDetection/YOLOX.git] modules.  However, due to some import and setup errors, these modules are cloned and modified locally for the moment to fix these issues.  Thus, there is no need to install them individually, but their requirements are still needed.
-
-#### ByteTrack: These instructions are in ByteTrack_HOME's README, but skip the installation of ByteTrack itself.
-1. Requirements.txt
-```
-cd ByteTrack_HOME
-pip3 install -r requirements.txt
-python3 setup.py develop
-```
-2. Install pycocotools: `pip3 install cython; pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`
-3. `pip3 install cython_bbox`
-
-
 ## Directory Structure, Key Files
 This repo contains the two implementations: our modified ByteTrack baseline, and our improved GSR-inspired method.  Also in the home directory is the dataset sample.
 
@@ -53,9 +39,10 @@ Other useful files are MOTVisualize.py in ByteTrack_Implemenation, if you change
 ### GSR Implementation
 
 ## Dependencies, Setup
-### ByteTrack Setup
+### ByteTrack ImplementationSetup
+This implementation utilizes the (sn-tracking)[https://github.com/SoccerNet/sn-tracking.git] module, the (ByteTrack)[https://github.com/ifzhang/ByteTrack.git] module, and the (YOLOX)[https://github.com/Megvii-BaseDetection/YOLOX.git] modules.  However, due to some import and setup errors, these modules are cloned and modified locally for the moment to fix these issues.  Thus, there is no need to install them individually, but their requirements are still needed.
 
-#### ByteTrack Implementation: These instructions are in ByteTrack_HOME's README, but skip the installation of ByteTrack itself.
+#### ByteTrack: These instructions are in ByteTrack_HOME's README, but skip the installation of ByteTrack itself.
 1. Requirements.txt
 ```
 cd ByteTrack_HOME
