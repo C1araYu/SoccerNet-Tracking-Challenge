@@ -12,13 +12,13 @@ This implementation utilizes the (sn-tracking)[https://github.com/SoccerNet/sn-t
 
 #### ByteTrack: These instructions are in ByteTrack_HOME's README, but skip the installation of ByteTrack itself.
 1. Requirements.txt
-'''
+```
 cd ByteTrack_HOME
 pip3 install -r requirements.txt
 python3 setup.py develop
-'''
-2. Install pycocotools: 'pip3 install cython; pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI''
-3. 'pip3 install cython_bbox'
+```
+2. Install pycocotools: `pip3 install cython; pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`
+3. `pip3 install cython_bbox`
 '''
 PYTHONPATH=~/ByteTrack_Implementation/ByteTrack_HOME:$PYTHONPATH bash run_bytetrack_no_gt_batch.sh
 '''
@@ -30,14 +30,29 @@ This repo contains the two implementations: our modified ByteTrack baseline, and
 
 #### ByteTrack Implementation: These instructions are in ByteTrack_HOME's README, but skip the installation of ByteTrack itself.
 1. Requirements.txt
-'''
+```
 cd ByteTrack_HOME
 pip3 install -r requirements.txt
 python3 setup.py develop
-'''
-2. Install pycocotools: 'pip3 install cython; pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI''
-3. 'pip3 install cython_bbox'
+```
+2. Install pycocotools: `pip3 install cython; pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`
+3. `pip3 install cython_bbox`
 
 #### SoccerNet:
-'pip install soccernet'
+Follow the instructions in the README from ByteTrack_Implementation/SN_TRACKING_HOME
+1. 
+`pip install soccernet`
+2.
+```
+from SoccerNet.Downloader import SoccerNetDownloader
+mySoccerNetDownloader = SoccerNetDownloader(LocalDirectory="path/to/SoccerNet")
+mySoccerNetDownloader.downloadDataTask(task="tracking", split=["train","test","challenge"])
+mySoccerNetDownloader.downloadDataTask(task="tracking-2023", split=["train", "test", "challenge"])
+```
+    cd <SN_TRACKING_HOME>/Benchmarks/ByteTrack
+    cp -i demo_track_no_gt.py <ByteTrack_HOME>/tools/demo_track_no_gt.py
+    cp -i yolox_x_soccernet_no_gt.py <ByteTrack_HOME>/exps/example/mot/
+    cp run_bytetrack_no_gt_batch.sh <ByteTrack_HOME>
+    cp tools/evaluate_soccernet_v3_tracking.py <ByteTrack_HOME>
+
 
