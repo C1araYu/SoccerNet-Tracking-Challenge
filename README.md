@@ -29,6 +29,8 @@ To evaluate:
     bash run_bytetrack_gt_batch.sh
 ```
 
+### Running GSR_Implementation
+
 ## Directory Structure, Key Files
 This repo contains the two implementations: our modified ByteTrack baseline, and our improved GSR-inspired method.  Also in the home directory is the dataset sample.
 
