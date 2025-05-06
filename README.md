@@ -30,7 +30,7 @@ To evaluate:
 ```
 
 ### Running GSR_Implementation
-Just refer to 
+Please refer to the README file in /GSR_Implementation.
 ## Directory Structure, Key Files
 This repo contains the two implementations: our modified ByteTrack baseline, and our improved GSR-inspired method.  Also in the home directory is the dataset sample.
 
@@ -39,7 +39,7 @@ Key files of the ByteTrack_Implementation are the ByteTrack_Implementation/SN_TR
 Other useful files are MOTVisualize.py in ByteTrack_Implemenation, if you change the filepaths at the bottom, you can turn your detections and tracklet IDs into annotated video output.  
 
 ### GSR Implementation
-
+Please refer to the README file in /GSR_Implementation.
 ## Dependencies, Setup
 ### ByteTrack ImplementationSetup
 This implementation utilizes the (sn-tracking)[https://github.com/SoccerNet/sn-tracking.git] module, the (ByteTrack)[https://github.com/ifzhang/ByteTrack.git] module, and the (YOLOX)[https://github.com/Megvii-BaseDetection/YOLOX.git] modules.  However, due to some import and setup errors, these modules are cloned and modified locally for the moment to fix these issues.  Thus, there is no need to install them individually, but their requirements are still needed.
@@ -66,7 +66,7 @@ mySoccerNetDownloader.downloadDataTask(task="tracking", split=["train","test","c
 mySoccerNetDownloader.downloadDataTask(task="tracking-2023", split=["train", "test", "challenge"])
 ```
 ### GSR Setup
-
+Please refer to the README file in /GSR_Implementation.
 #### GSR Implementation: These instructions are in GSR_Implementation's README
 
 
